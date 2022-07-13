@@ -8,18 +8,18 @@ compiler:
       - '@aave=aave/protocol-v2@aave-v2-asset-listing'
 dotenv: .env
 networks:
-  default: mainnet-fork
-  # https://docs.aave.com/developers/deployed-contracts/v3-testnet-addresses
+  default: mainnet-fork-dev
+  # https://docs.aave.com/developers/v/2.0/deployed-contracts/deployed-contracts
+  mainnet:
+    aave-addresses-provider: "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
+    weth-token: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    verify: True
   kovan:
-    aave-addresses-provider: "0x651b8A8cA545b251a8f49B57D5838Da0a8DFbEF9"
+    aave-addresses-provider: "0x88757f2f99175387aB4C6a4b3067c77A695b0349"
     weth-token: "0xd0A1E359811322d97991E03f863a0C30C2cF029C"
     verify: True
-  rinkeby:
-    aave-addresses-provider: "0xBA6378f1c1D046e9EB0F538560BA7558546edF3C"
-    weth-token: "0xc778417E063141139Fce010982780140Aa0cD5Ab"
-    verify: True
   # mainnet
-  mainnet-fork:
+  mainnet-fork-dev:
     aave-addresses-provider: "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
     weth-token: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
     eth-token: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"

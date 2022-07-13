@@ -5,7 +5,7 @@ from scripts.deploy import deploy
 from web3 import Web3
 
 
-MINIMUM_BALANCE = 0.1
+MINIMUM_BALANCE = 0.01
 LOAN_AMOUNT = Web3.toWei(MINIMUM_BALANCE * 0.9, 'ether')
 MINIMUM_BALANCE_WEI = Web3.toWei(MINIMUM_BALANCE, 'ether')
 
@@ -21,7 +21,7 @@ def main():
     print('Getting Flashloan contract ...')
     flashloan = deploy()
     
-    # Funt the contract with WETH
+    # Fund the contract with WETH
     if weth.balanceOf(flashloan) < MINIMUM_BALANCE_WEI:
         print('Funding FlashLoan contract with WETH ...')
         weth_tx = weth.transfer(flashloan.address, MINIMUM_BALANCE_WEI, {"from": account})

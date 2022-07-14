@@ -1,7 +1,7 @@
 from brownie import config, network, interface
 from scripts.get_weth import get_weth
 from scripts.helpful_scripts import get_account
-from scripts.deploy import deploy
+from scripts.deploy import deploy_contract
 from web3 import Web3
 
 
@@ -19,7 +19,7 @@ def main():
 
     # Deploy Flashloan contract
     print('Getting Flashloan contract ...')
-    flashloan = deploy()
+    flashloan = deploy_contract()
     
     # Fund the contract with WETH
     if weth.balanceOf(flashloan) < MINIMUM_BALANCE_WEI:

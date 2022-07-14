@@ -13,16 +13,22 @@ networks:
   mainnet:
     aave-addresses-provider: "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
     weth-token: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    eth-token: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    dai-token: "0x6B175474E89094C44Da98b954EedeAC495271d0F"
     verify: True
   kovan:
     aave-addresses-provider: "0x88757f2f99175387aB4C6a4b3067c77A695b0349"
     weth-token: "0xd0A1E359811322d97991E03f863a0C30C2cF029C"
+    eth-token: ""
+    dai-token: "0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD"
     verify: True
   # mainnet
   mainnet-fork-dev:
     aave-addresses-provider: "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
     weth-token: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
     eth-token: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    dai-token: "0x6B175474E89094C44Da98b954EedeAC495271d0F"
     verify: False
 wallets:
   from_key: ${PRIVATE_KEY}
+  bad_actor: ${BAD_ACTOR}

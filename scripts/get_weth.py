@@ -32,7 +32,7 @@ def get_weth(account=None, weth_amount=None):
         print('Funding Account with WETH ...')
         tx = weth_contract.deposit({'from': account,
                                     'value': weth_amount,
-                                    'gas_limit':12000000,
+                                    'gas_limit': 12000000,
                                     'allow_revert': False})
         print(f"Received {Web3.fromWei(weth_amount, 'ether')} WETH!")
         tx.wait(1)

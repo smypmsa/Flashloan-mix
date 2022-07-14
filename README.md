@@ -4,5 +4,5 @@ This repo inspired by [brownie mix](https://github.com/brownie-mix/aave-flashloa
 To do:
 - [x] Solve Kovan/Rinkeby issues (transactions reverted)
 - [ ] Add simple swaps into the contract
-- [ ] Add tests
+- [x] Add some tests
 - [ ] Add arbitrage custom logic

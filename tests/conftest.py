@@ -1,5 +1,4 @@
 import pytest
-from brownie import config, network
 from scripts.helpful_scripts import get_account, get_bad_actor_account, get_contracts
 from scripts.deploy import deploy_contract
 from scripts.get_weth import get_weth
@@ -50,6 +49,7 @@ def transfer_weth_to_flashloan_contract(owner_account, flashloan_contract, min_c
     tx2 = WETH.transfer(flashloan_contract.address, min_contract_balance, {"from": owner_account})
     # tx2.wait(2)
     return tx2
+
 
 @pytest.fixture(scope="module")
 def bad_actor():

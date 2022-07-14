@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
+pragma solidity ^0.6.0;
 
-pragma solidity 0.6.12;
 
 import {FlashLoanReceiverBase} from "@aave/contracts/flashloan/base/FlashLoanReceiverBase.sol";
 import {ILendingPoolAddressesProvider} from "@aave/contracts/interfaces/ILendingPoolAddressesProvider.sol";

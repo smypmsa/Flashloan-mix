@@ -2,7 +2,7 @@ from brownie import FlashLoan, config, network
 from scripts.helpful_scripts import get_account, LOCAL_BLOCKCHAIN_ENVIRONMENTS, FORKED_LOCAL_ENVIRONMENTS
 
 
-def deploy_contract():
+def deploy_contract_flashloan():
     """
     Deploys FlashLoan contract with input parameters: owner and
     address of AAVE addresses provider contract.

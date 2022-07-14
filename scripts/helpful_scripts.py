@@ -4,9 +4,6 @@ from brownie import network, config, accounts, Contract, interface
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork", "mainnet-fork-dev"]
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["development", "ganache-local"]
 
-DECIMALS = 8
-INITIAL_VALUE = 200000000000
-
 
 def get_account():
     if (

@@ -27,4 +27,5 @@ def get_bad_actor_account():
 def get_contracts():
     provider_contract = interface.ILendingPoolAddressesProvider(config['networks'][network.show_active()]['aave-addresses-provider'])
     weth_contract = interface.IWETH(config['networks'][network.show_active()]['weth-token'])
-    return provider_contract, weth_contract
+    dai_contract = interface.IERC20(config['networks'][network.show_active()]['dai-token'])
+    return provider_contract, weth_contract, dai_contract

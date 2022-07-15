@@ -66,7 +66,7 @@ contract FlashLoan is FlashLoanReceiverBase, Ownable {
         );
     }
 
-    function flashLoan(address _asset, uint256 _amount) public onlyOwner {
+    function flashLoan(address _asset, uint256 _amount) external onlyOwner {
         bytes memory data = "";
 
         address[] memory assets = new address[](1);

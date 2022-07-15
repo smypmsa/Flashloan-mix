@@ -5,8 +5,10 @@ pragma experimental ABIEncoderV2;
 import '@uniswap3periphery/contracts/libraries/TransferHelper.sol';
 import '@uniswap3periphery/contracts/interfaces/ISwapRouter.sol';
 
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
-contract UniswapSingleSwap {
+
+contract UniswapSingleSwap is Ownable {
     // For the scope of these swap examples,
     // we will detail the design considerations when using
     // `exactInput`, `exactInputSingle`, `exactOutput`, and  `exactOutputSingle`.
@@ -27,7 +29,7 @@ contract UniswapSingleSwap {
     /// @dev The calling address must approve this contract to spend at least `amountIn` worth of its DAI for this function to succeed.
     /// @param amountIn The exact amount of DAI that will be swapped for WETH9.
     /// @return amountOut The amount of WETH9 received.
-    function swapExactInputSingle(uint256 amountIn, address tokenIn, address tokenOut) external returns (uint256 amountOut) {
+    function swapExactInputSingle(uint256 amountIn, address tokenIn, address tokenOut) onlyOwner external returns (uint256 amountOut) {
         // msg.sender must approve this contract
 
         // Transfer the specified amount of DAI to this contract.
@@ -60,7 +62,7 @@ contract UniswapSingleSwap {
     /// @param amountOut The exact amount of WETH9 to receive from the swap.
     /// @param amountInMaximum The amount of DAI we are willing to spend to receive the specified amount of WETH9.
     /// @return amountIn The amount of DAI actually spent in the swap.
-    function swapExactOutputSingle(uint256 amountOut, uint256 amountInMaximum, address tokenIn, address tokenOut) external returns (uint256 amountIn) {
+    function swapExactOutputSingle(uint256 amountOut, uint256 amountInMaximum, address tokenIn, address tokenOut) onlyOwner external returns (uint256 amountIn) {
         // Transfer the specified amount of DAI to this contract.
         TransferHelper.safeTransferFrom(tokenIn, msg.sender, address(this), amountInMaximum);
 

@@ -8,11 +8,14 @@ To do (basic):
 - [x] Add first tests
 - [x] Add swaps to the contract (Uniswap V3)
 - [ ] Add tests covering swaps
+- [ ] Test a complete smart contract in live testnet
 - [ ] Add interaction with the second DEX (Uniswap V2)
 - [ ] Add tests covering all swap logic
+- [ ] Test a complete smart contract in live testnet
 
 
 To do (advanced):
 - [ ] Add custom arbitrage logic (regardless potential profits/losses)
 - [ ] Add price feeds (?)
 - [ ] Add routes (?)
+- [ ] Optimize gas spendings

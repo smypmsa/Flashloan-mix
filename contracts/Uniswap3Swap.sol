@@ -8,7 +8,7 @@ import '@uniswap3periphery/contracts/interfaces/ISwapRouter.sol';
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 
-contract UniswapSingleSwap is Ownable {
+contract UniswapSingleSwapV3 is Ownable {
     // For the scope of these swap examples,
     // we will detail the design considerations when using
     // `exactInput`, `exactInputSingle`, `exactOutput`, and  `exactOutputSingle`.

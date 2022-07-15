@@ -1,4 +1,4 @@
-# Aave Flash Loan Mix
+# Flash loan + Uniswap V2/V3
 This repo inspired by [brownie mix](https://github.com/brownie-mix/aave-flashloan-mix). Tests run in Ethereum mainnet-fork (Alchemy).
 
 The purpose is to build arbitrage smart contract utilizing flash loans.

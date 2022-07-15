@@ -1,4 +1,4 @@
-from brownie import network, config, accounts, Contract, interface
+from brownie import network, config, accounts, interface
 
 
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork", "mainnet-fork-dev"]

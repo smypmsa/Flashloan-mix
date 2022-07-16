@@ -5,11 +5,9 @@ import '@uniswap3periphery/contracts/libraries/TransferHelper.sol';
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 import {IUniswapV2Router02} from '../interfaces/IUniswapV2Router02.sol';
-import {SafeMath} from '../libraries/SafeMath.sol';
 
 
 contract UniswapSingleSwapV2 is Ownable {
-    using SafeMath for uint256;
 
     IUniswapV2Router02 public immutable router;
 

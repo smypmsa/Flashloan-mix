@@ -16,6 +16,7 @@ def main():
     get_weth_status = get_weth(account, MINIMUM_BALANCE_WEI)
 
     weth = interface.IWETH(config['networks'][network.show_active()]['weth-token'])
+    dai = interface.IERC20(config['networks'][network.show_active()]['dai-token'])
 
     # Deploy Flashloan contract
     print('Getting Flashloan contract ...')
@@ -33,7 +34,7 @@ def main():
     print('Executing flash loan ...')
     approve_tx = weth.approve(flashloan, LOAN_AMOUNT, {'from': account})
     approve_tx.wait(1)
-    tx = flashloan.flashLoan(weth, LOAN_AMOUNT, {'from': account})
+    tx = flashloan.flashLoan(weth, dai, LOAN_AMOUNT, {'from': account})
     tx.wait(1)
 
     print('Success, my little flash boy!')

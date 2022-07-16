@@ -24,7 +24,7 @@ networks:
     eth-token: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
     dai-token: "0x6B175474E89094C44Da98b954EedeAC495271d0F"
     uniswap-router-v3: "0xE592427A0AEce92De3Edee1F18E0157C05861564"
-    uniswap-router-v2: "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45" # 02
+    uniswap-router-v2: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D" # 02
     verify: True
   kovan:
     aave-addresses-provider: "0x88757f2f99175387aB4C6a4b3067c77A695b0349"
@@ -39,7 +39,7 @@ networks:
     eth-token: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
     dai-token: "0x6B175474E89094C44Da98b954EedeAC495271d0F"
     uniswap-router-v3: "0xE592427A0AEce92De3Edee1F18E0157C05861564"
-    uniswap-router-v2: "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45" # 02
+    uniswap-router-v2: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D" # 02
     verify: False
 wallets:
   from_key: ${PRIVATE_KEY}

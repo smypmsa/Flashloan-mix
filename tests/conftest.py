@@ -1,6 +1,6 @@
 import pytest
 from scripts.helpful_scripts import get_account, get_bad_actor_account, get_contracts
-from scripts.deploy import deploy_contract_flashloan, deploy_contract_uniswap_v3
+from scripts.deploy import deploy_contract_flashloan, deploy_contract_uniswap_v3, deploy_contract_uniswap_v2
 from scripts.get_weth import get_weth
 from web3 import Web3
 
@@ -26,9 +26,17 @@ def flashloan_contract():
 
 
 @pytest.fixture(scope="module")
+def uniswap2_contract():
+    """
+    Deploys UniswapSingleSwapV2 contract.
+    """
+    return deploy_contract_uniswap_v2()
+
+
+@pytest.fixture(scope="module")
 def uniswap3_contract():
     """
-    Deploys UniswapSingleSwap contract.
+    Deploys UniswapSingleSwapV3 contract.
     """
     return deploy_contract_uniswap_v3()
 

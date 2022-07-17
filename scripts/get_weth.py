@@ -3,7 +3,7 @@ from scripts.helpful_scripts import get_account
 from web3 import Web3
 
 
-MINIMUM_AMOUNT = 0.01
+MINIMUM_AMOUNT = 0.1
 
 
 def main():

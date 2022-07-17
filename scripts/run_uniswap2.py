@@ -5,7 +5,7 @@ from scripts.deploy import deploy_contract_uniswap_v2
 from web3 import Web3
 
 
-MINIMUM_BALANCE = 0.001
+MINIMUM_BALANCE = 0.1
 SWAP_AMOUNT = Web3.toWei(MINIMUM_BALANCE * 0.9, 'ether')
 MINIMUM_BALANCE_WEI = Web3.toWei(MINIMUM_BALANCE, 'ether')
 
@@ -19,11 +19,11 @@ def main():
     get_weth_status = get_weth(account, MINIMUM_BALANCE_WEI)
 
     weth = interface.IWETH(config['networks'][network.show_active()]['weth-token'])
-
+   
     # Deploy Uniswap v3 contract
     print('Getting Uniswap v2 contract ...')
     uniswap_v2 = deploy_contract_uniswap_v2()
-    
+     
     # Execute single swap
     print('Approving spending ...')
     approve_tx = weth.approve(uniswap_v2, SWAP_AMOUNT, {'from': account})
@@ -31,6 +31,6 @@ def main():
     print('Executing swap ...')
     tx = uniswap_v2.swapExactInputSingle(SWAP_AMOUNT, TOKEN_IN, TOKEN_OUT, {'from': account})
     tx.wait(1)
-
+ 
     print('Success, my little uniswap boy!')
     return uniswap_v2

@@ -41,12 +41,8 @@ contract FlashLoan is FlashLoanReceiverBase, Ownable {
         uint256 amountIn,
         address tokenIn,
         address tokenOut
-    ) onlyOwner internal returns (uint256 amountOut) {
-        TransferHelper.safeTransferFrom(tokenIn,
-            msg.sender,
-            address(this),
-            amountIn);
-
+    ) internal returns (uint256 amountOut) {
+        // msg.sender must approve this contract
         TransferHelper.safeApprove(
             tokenIn,
             address(routerV2),
@@ -70,14 +66,8 @@ contract FlashLoan is FlashLoanReceiverBase, Ownable {
         uint256 amountIn,
         address tokenIn,
         address tokenOut
-    ) onlyOwner internal returns (uint256 amountOut) {
-
+    ) internal returns (uint256 amountOut) {
         // msg.sender must approve this contract
-        TransferHelper.safeTransferFrom(
-            tokenIn,
-            msg.sender,
-            address(this),
-            amountIn);
         TransferHelper.safeApprove(
             tokenIn,
             address(routerV3),
@@ -112,7 +102,7 @@ contract FlashLoan is FlashLoanReceiverBase, Ownable {
     {
         uint256 outputAmount = swapExactInputSingle_V2(swapAmount, tokenA, tokenB);
         // Sell all of token_b
-        swapExactInputSingle_V3(outputAmount, tokenB, tokenA);
+        swapExactInputSingle_V3(outputAmount * 1/2, tokenB, tokenA);
 
         // Approve the LendingPool contract allowance to *pull* the owed amount
         for (uint i = 0; i < assets.length; i++) {
@@ -170,7 +160,7 @@ contract FlashLoan is FlashLoanReceiverBase, Ownable {
         tokenB = _tokenB;
         // Swap amount is less than loan amount
         // for testing purposes.
-        swapAmount = _amount * 1/2;
+        swapAmount = _amount * 3/4;
 
         _flashloan(assets, amounts);
     }

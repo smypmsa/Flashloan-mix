@@ -3,6 +3,7 @@ This repo inspired by [brownie mix](https://github.com/brownie-mix/aave-flashloa
 
 The purpose is to build arbitrage smart contract utilizing flash loans.
 
+### Run flash loan
 To run flash loan in kovan testnet, follow the next steps (your test wallet must have at least 0.011 ETH, however you can update min balance in scripts):
 1. Update .env file with your credentials (PRIVATE_KEY, WEB3_INFURA_PROJECT_ID, WEB3_ALCHEMY_PROJECT_ID, etc.).
 ```
@@ -15,19 +16,17 @@ export ETHERSCAN_TOKEN=6FGRH...
 2. Run `brownie compile` to check if the contract compiles.
 3. Run `brownie run scripts/run_flashloan.py`.
 
-
-TODO (basic):
+### To do list
+Basic tasks:
 - [x] Solve Kovan/Rinkeby issues (transactions reverted)
 - [x] Add first tests
 - [x] Add swaps to the contract (Uniswap V3)
 - [x] Add tests covering swaps
-- [ ] Test a complete smart contract in live testnet
-- [ ] Add interaction with the second DEX (Uniswap V2)
-- [ ] Add tests covering all swap logic
-- [ ] Test a complete smart contract in live testnet
+- [x] Add interaction with the second DEX (Uniswap V2)
+- [x] Add tests covering all swap logic
+- [x] Test a complete smart contract in live testnet
 
-
-TODO (advanced):
+Advanced tasks:
 - [ ] Add custom arbitrage logic (regardless potential profits/losses)
 - [ ] Add price feeds (?)
 - [ ] Add routes (?)

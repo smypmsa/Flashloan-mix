@@ -56,7 +56,7 @@ contract FlashLoan is FlashLoanReceiverBase, Ownable {
             amountIn,
             0, // amountOutMin: we can skip computing this number because the math is tested
             path,
-            msg.sender, // recipient of the output tokens
+            address(this), // msg.sender in this case won't work as DAI would return to Aave contract
             block.timestamp // deadline: unix timestamp after which the transaction will revert
         )[1];
     }
@@ -78,7 +78,7 @@ contract FlashLoan is FlashLoanReceiverBase, Ownable {
                 tokenIn: tokenIn,
                 tokenOut: tokenOut,
                 fee: poolFee,
-                recipient: msg.sender,
+                recipient: address(this), // msg.sender in this case won't work as DAI would return to Aave contract
                 deadline: block.timestamp,
                 amountIn: amountIn,
                 amountOutMinimum: 0,

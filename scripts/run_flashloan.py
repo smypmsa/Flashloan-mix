@@ -30,30 +30,12 @@ def main():
     else:
         print('The FlashLoan contract is already funded with WETH')
 
-    print(f"Balance of the owner account is {Web3.fromWei(account.balance(), 'ether')} ETH")
-    print(f"Balance of the FL account is {Web3.fromWei(flashloan.balance(), 'ether')} ETH")
-
-    print(f"Balance of the owner account is {Web3.fromWei(weth.balanceOf(account), 'ether')} WETH")
-    print(f"Balance of the FL account is {Web3.fromWei(weth.balanceOf(flashloan), 'ether')} WETH")
-    
-    print(f"Balance of the owner account is {Web3.fromWei(dai.balanceOf(account), 'ether')} DAI")
-    print(f"Balance of the FL account is {Web3.fromWei(dai.balanceOf(flashloan), 'ether')} DAI")
-    
     # Execute flash loan
     print('Executing flash loan ...')
     approve_tx = weth.approve(flashloan, LOAN_AMOUNT, {'from': account})
     approve_tx.wait(1)
-    tx = flashloan.flashLoan(weth, dai, LOAN_AMOUNT, {'from': account})
+    tx = flashloan.flashLoan(weth.address, dai.address, LOAN_AMOUNT, {'from': account})
     tx.wait(1)
-
-    print(f"Balance of the owner account is {Web3.fromWei(account.balance(), 'ether')} ETH")
-    print(f"Balance of the FL account is {Web3.fromWei(flashloan.balance(), 'ether')} ETH")
-
-    print(f"Balance of the owner account is {Web3.fromWei(weth.balanceOf(account), 'ether')} WETH")
-    print(f"Balance of the FL account is {Web3.fromWei(weth.balanceOf(flashloan), 'ether')} WETH")
-    
-    print(f"Balance of the owner account is {Web3.fromWei(dai.balanceOf(account), 'ether')} DAI")
-    print(f"Balance of the FL account is {Web3.fromWei(dai.balanceOf(flashloan), 'ether')} DAI")
-    
+ 
     print('Success, my little flash boy!')
     return flashloan

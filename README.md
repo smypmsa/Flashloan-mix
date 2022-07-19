@@ -5,7 +5,7 @@ The purpose is to build arbitrage smart contract utilizing flash loans.
 
 ### Run flash loan
 To run flash loan in kovan testnet, follow the next steps (your test wallet must have at least 0.011 ETH, however you can update min balance in scripts):
-1. Update .env file with your credentials (PRIVATE_KEY, WEB3_INFURA_PROJECT_ID, WEB3_ALCHEMY_PROJECT_ID, etc.).
+1. Update .env file with your credentials.
 ```
 export PRIVATE_KEY=56b44efdb532...
 export BAD_ACTOR=46b44efdb532...

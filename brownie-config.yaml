@@ -31,6 +31,8 @@ networks:
     weth-token: "0xd0A1E359811322d97991E03f863a0C30C2cF029C"
     eth-token: ""
     dai-token: "0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD"
+    uniswap-router-v3: "0xE592427A0AEce92De3Edee1F18E0157C05861564" # routers have the same address in testnets
+    uniswap-router-v2: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D" # routers have the same address in testnets
     verify: True
   # mainnet
   mainnet-fork-dev:

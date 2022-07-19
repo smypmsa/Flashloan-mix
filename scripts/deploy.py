@@ -27,6 +27,8 @@ def deploy_contract_flashloan():
         flashloan = FlashLoan.deploy(
             account.address,
             config["networks"][network.show_active()]["aave-addresses-provider"],
+            config["networks"][network.show_active()]["uniswap-router-v2"],
+            config["networks"][network.show_active()]["uniswap-router-v3"],
             {"from": account},
         )
         return flashloan

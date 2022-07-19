@@ -101,8 +101,8 @@ contract FlashLoan is FlashLoanReceiverBase, Ownable {
         returns (bool)
     {
         uint256 outputAmount = swapExactInputSingle_V2(swapAmount, tokenA, tokenB);
-        // Sell all of token_b
-        swapExactInputSingle_V3(outputAmount * 1/2, tokenB, tokenA);
+        // Sell all of token_b. For testing purposes, we sell only part of token B
+        swapExactInputSingle_V3(outputAmount * 3/4, tokenB, tokenA);
 
         // Approve the LendingPool contract allowance to *pull* the owed amount
         for (uint i = 0; i < assets.length; i++) {
@@ -158,12 +158,9 @@ contract FlashLoan is FlashLoanReceiverBase, Ownable {
         // and which we sell in the first swap.
         tokenA = _tokenA;
         tokenB = _tokenB;
-        // Swap amount is less than loan amount
-        // for testing purposes.
-        swapAmount = _amount * 3/4;
+        swapAmount = _amount;
 
         _flashloan(assets, amounts);
     }
-
 
 }

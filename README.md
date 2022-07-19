@@ -18,16 +18,14 @@ export ETHERSCAN_TOKEN=6FGRH...
 
 ### To do list
 Basic tasks:
-- [x] Solve Kovan/Rinkeby issues (transactions reverted)
-- [x] Add first tests
 - [x] Add swaps to the contract (Uniswap V3)
+- [x] Add swap to the contract (Uniswap V2)
 - [x] Add tests covering swaps
-- [x] Add interaction with the second DEX (Uniswap V2)
-- [x] Add tests covering all swap logic
 - [x] Test a complete smart contract in live testnet
+- [ ] Add withdrawal of all tokens to the owner
+- [ ] Add fetching pool prices (off-chain?)
 
 Advanced tasks:
-- [ ] Add custom arbitrage logic (regardless potential profits/losses)
-- [ ] Add price feeds (?)
-- [ ] Add routes (?)
-- [ ] Optimize gas spendings
+- [ ] Consider potential profits/losses
+- [ ] Optimize gas costs
+- [ ] Refactor the code according to best practice
